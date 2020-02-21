@@ -42,9 +42,6 @@ export default {
     },
   },
   methods: {
-    hasValue(item, column) {
-      return item[column.toLowerCase()] !== 'undefined';
-    },
     itemValue(item, column) {
       return item[column.toLowerCase()];
     },

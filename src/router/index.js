@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import EmptyPage from '../views/EmptyPage.vue';
 import DashboardLayout from '../layout/dashboard/DashboardLayout.vue';
-import TableList from '../views/TableList.vue';
+import UserList from '../views/user/UserList.vue';
 
 Vue.use(VueRouter);
 
@@ -18,9 +18,10 @@ const routes = [
         component: EmptyPage,
       },
       {
-        path: '/table',
-        name: 'TableList',
-        component: TableList,
+        path: '/user',
+        name: 'UserList',
+        title: 'List Of User',
+        component: UserList,
       },
       {
         path: '/about',
