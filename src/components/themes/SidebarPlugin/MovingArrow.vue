@@ -7,21 +7,21 @@ export default {
   props: {
     moveY: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
     /**
      * Styles to animate the arrow
      * @returns {{transform: string}}
      */
-    arrowStyle () {
+    arrowStyle() {
       return {
-        transform: `translate3d(0px, ${this.moveY}px, 0px)`
-      }
-    }
-  }
-}
+        transform: `translate3d(0px, ${this.moveY}px, 0px)`,
+      };
+    },
+  },
+};
 </script>
 <style lang="scss">
 $bg-nude: #f4f3ef !default;

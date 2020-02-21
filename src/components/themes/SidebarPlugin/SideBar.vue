@@ -37,100 +37,101 @@
   </div>
 </template>
 <script>
-import MovingArrow from './MovingArrow.vue'
-import SidebarLink from './SidebarLink'
+import MovingArrow from './MovingArrow.vue';
+import SidebarLink from './SidebarLink.vue';
+
 export default {
   props: {
     title: {
       type: String,
-      default: 'Paper Dashboard'
+      default: 'Paper Dashboard',
     },
     backgroundColor: {
       type: String,
       default: 'black',
-      validator: value => {
-        const acceptedValues = ['white', 'black', 'darkblue']
-        return acceptedValues.indexOf(value) !== -1
-      }
+      validator: (value) => {
+        const acceptedValues = ['white', 'black', 'darkblue'];
+        return acceptedValues.indexOf(value) !== -1;
+      },
     },
     activeColor: {
       type: String,
       default: 'success',
-      validator: value => {
+      validator: (value) => {
         const acceptedValues = [
           'primary',
           'info',
           'success',
           'warning',
-          'danger'
-        ]
-        return acceptedValues.indexOf(value) !== -1
-      }
+          'danger',
+        ];
+        return acceptedValues.indexOf(value) !== -1;
+      },
     },
     sidebarLinks: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     autoClose: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
-  provide () {
+  provide() {
     return {
       autoClose: this.autoClose,
       addLink: this.addLink,
-      removeLink: this.removeLink
-    }
+      removeLink: this.removeLink,
+    };
   },
   components: {
     MovingArrow,
-    SidebarLink
+    SidebarLink,
   },
   computed: {
     /**
      * Styles to animate the arrow near the current active sidebar link
      * @returns {{transform: string}}
      */
-    arrowMovePx () {
-      return this.linkHeight * this.activeLinkIndex
-    }
+    arrowMovePx() {
+      return this.linkHeight * this.activeLinkIndex;
+    },
   },
-  data () {
+  data() {
     return {
       linkHeight: 65,
       activeLinkIndex: 0,
       windowWidth: 0,
       isWindows: false,
       hasAutoHeight: false,
-      links: []
-    }
+      links: [],
+    };
   },
   methods: {
-    findActiveLink () {
+    findActiveLink() {
       this.links.forEach((link, index) => {
         if (link.isActive()) {
-          this.activeLinkIndex = index
+          this.activeLinkIndex = index;
         }
-      })
+      });
     },
-    addLink (link) {
-      const index = this.$slots.links.indexOf(link.$vnode)
-      this.links.splice(index, 0, link)
+    addLink(link) {
+      const index = this.$slots.links.indexOf(link.$vnode);
+      this.links.splice(index, 0, link);
     },
-    removeLink (link) {
-      const index = this.links.indexOf(link)
+    removeLink(link) {
+      const index = this.links.indexOf(link);
       if (index > -1) {
-        this.links.splice(index, 1)
+        this.links.splice(index, 1);
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     this.$watch('$route', this.findActiveLink, {
-      immediate: true
-    })
-  }
-}
+      immediate: true,
+    });
+  },
+};
 </script>
 <style>
 </style>

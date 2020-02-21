@@ -24,9 +24,9 @@ export default {
   name: 'card',
   props: {
     title: String,
-    subTitle: String
-  }
-}
+    subTitle: String,
+  },
+};
 </script>
 <style>
 </style>

@@ -25,7 +25,7 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'button'
+      default: 'button',
     },
     round: Boolean,
     icon: Boolean,
@@ -35,19 +35,19 @@ export default {
     disabled: Boolean,
     type: {
       type: String,
-      default: 'default'
+      default: 'default',
     },
     nativeType: {
       type: String,
-      default: 'button'
+      default: 'button',
     },
     size: {
       type: String,
-      default: ''
+      default: '',
     },
-    simple: Boolean
-  }
-}
+    simple: Boolean,
+  },
+};
 </script>
 <style>
 </style>

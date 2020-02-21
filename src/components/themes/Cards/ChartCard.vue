@@ -30,84 +30,81 @@
   </card>
 </template>
 <script>
-import Card from './Card.vue'
+import Card from './Card.vue';
+
 export default {
   name: 'chart-card',
   components: {
-    Card
+    Card,
   },
   props: {
     footerText: {
       type: String,
-      default: ''
+      default: '',
     },
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     subTitle: {
       type: String,
-      default: ''
+      default: '',
     },
     chartType: {
       type: String,
-      default: 'Line' // Line | Pie | Bar
+      default: 'Line', // Line | Pie | Bar
     },
     chartOptions: {
       type: Object,
-      default: () => {
-        return {}
-      }
+      default: () => ({}),
     },
     chartData: {
       type: Object,
-      default: () => {
-        return {
-          labels: [],
-          series: []
-        }
-      }
-    }
+      default: () => ({
+        labels: [],
+        series: [],
+      }),
+    },
   },
-  data () {
+  data() {
     return {
-      chartId: 'no-id'
-    }
+      chartId: 'no-id',
+    };
   },
   methods: {
-    /***
+    /** *
      * Initializes the chart by merging the chart options sent via props and the default chart options
      */
-    initChart (Chartist) {
-      const chartIdQuery = `#${this.chartId}`
+    initChart(Chartist) {
+      const chartIdQuery = `#${this.chartId}`;
       Chartist[this.chartType](
         chartIdQuery,
         this.chartData,
-        this.chartOptions
-      )
+        this.chartOptions,
+      );
     },
-    /***
+    /** *
      * Assigns a random id to the chart
      */
-    updateChartId () {
-      const currentTime = new Date().getTime().toString()
-      const randomInt = this.getRandomInt(0, currentTime)
-      this.chartId = `div_${randomInt}`
+    updateChartId() {
+      const currentTime = new Date().getTime().toString();
+      const randomInt = this.getRandomInt(0, currentTime);
+      this.chartId = `div_${randomInt}`;
     },
-    getRandomInt (min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min
-    }
+    getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
   },
-  mounted () {
-    this.updateChartId()
+  mounted() {
+    this.updateChartId();
     import('chartist').then((Chartist) => {
-      const ChartistLib = Chartist.default || Chartist
+      const ChartistLib = Chartist.default || Chartist;
       this.$nextTick(() => {
-        this.initChart(ChartistLib)
-      })
-    })
-  }
-}
+        this.initChart(ChartistLib);
+      });
+    });
+  },
+};
 </script>
 <style>
 </style>

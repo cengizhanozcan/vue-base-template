@@ -24,26 +24,26 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'li'
+      default: 'li',
     },
     title: String,
     icon: String,
-    titleClasses: [String, Object, Array]
+    titleClasses: [String, Object, Array],
   },
-  data () {
+  data() {
     return {
-      isOpen: false
-    }
+      isOpen: false,
+    };
   },
   methods: {
-    toggleDropDown () {
-      this.isOpen = !this.isOpen
-      this.$emit('change', this.isOpen)
+    toggleDropDown() {
+      this.isOpen = !this.isOpen;
+      this.$emit('change', this.isOpen);
     },
-    closeDropDown () {
-      this.isOpen = false
-      this.$emit('change', false)
-    }
-  }
-}
+    closeDropDown() {
+      this.isOpen = false;
+      this.$emit('change', false);
+    },
+  },
+};
 </script>

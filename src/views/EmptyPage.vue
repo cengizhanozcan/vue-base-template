@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import EmptyComponent from '../components/EmptyComponent'
+import EmptyComponent from '../components/EmptyComponent.vue';
 
 export default {
   name: 'empty-page',
   components: {
-    EmptyComponent
-  }
-}
+    EmptyComponent,
+  },
+};
 </script>
 
 <style scoped>

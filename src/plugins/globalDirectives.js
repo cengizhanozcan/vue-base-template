@@ -4,8 +4,9 @@
  */
 
 const GlobalDirectives = {
-  install (Vue) {
-  }
-}
+  // eslint-disable-next-line no-unused-vars
+  install(Vue) {
+  },
+};
 
-export default GlobalDirectives
+export default GlobalDirectives;

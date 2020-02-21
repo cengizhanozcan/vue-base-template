@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'empty-component'
-}
+  name: 'empty-component',
+};
 </script>
 
 <style scoped>

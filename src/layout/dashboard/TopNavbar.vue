@@ -44,34 +44,34 @@
 <script>
 export default {
   computed: {
-    routeName () {
-      const { name } = this.$route
-      return this.capitalizeFirstLetter(name)
-    }
+    routeName() {
+      const { name } = this.$route;
+      return this.capitalizeFirstLetter(name);
+    },
   },
-  data () {
+  data() {
     return {
-      activeNotifications: false
-    }
+      activeNotifications: false,
+    };
   },
   methods: {
-    capitalizeFirstLetter (string) {
-      return string.charAt(0).toUpperCase() + string.slice(1)
+    capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
     },
-    toggleNotificationDropDown () {
-      this.activeNotifications = !this.activeNotifications
+    toggleNotificationDropDown() {
+      this.activeNotifications = !this.activeNotifications;
     },
-    closeDropDown () {
-      this.activeNotifications = false
+    closeDropDown() {
+      this.activeNotifications = false;
     },
-    toggleSidebar () {
-      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar)
+    toggleSidebar() {
+      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
     },
-    hideSidebar () {
-      this.$sidebar.displaySidebar(false)
-    }
-  }
-}
+    hideSidebar() {
+      this.$sidebar.displaySidebar(false);
+    },
+  },
+};
 </script>
 <style>
 </style>
