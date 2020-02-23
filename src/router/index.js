@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import EmptyPage from '../views/EmptyPage.vue';
 import DashboardLayout from '../layout/dashboard/DashboardLayout.vue';
 import UserList from '../views/user/UserList.vue';
+import UserForm from '../views/user/UserForm.vue';
 
 Vue.use(VueRouter);
 
@@ -10,7 +11,7 @@ const routes = [
   {
     path: '/',
     component: DashboardLayout,
-    redirect: '/emptyPage',
+    redirect: '/user',
     children: [
       {
         path: '/emptyPage',
@@ -22,6 +23,12 @@ const routes = [
         name: 'UserList',
         title: 'List Of User',
         component: UserList,
+      },
+      {
+        path: '/userForm',
+        name: 'UserForm',
+        title: 'List Of User',
+        component: UserForm,
       },
       {
         path: '/about',

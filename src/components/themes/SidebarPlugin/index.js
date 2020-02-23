@@ -1,5 +1,5 @@
 import Sidebar from './SideBar.vue';
-import SidebarLink from './SidebarLink';
+import SidebarLink from './SidebarLink.vue';
 
 const SidebarStore = {
   showSidebar: false,
@@ -17,6 +17,7 @@ const SidebarPlugin = {
       },
     });
 
+    // eslint-disable-next-line no-param-reassign
     Vue.prototype.$sidebar = app.sidebarStore;
     Vue.component('side-bar', Sidebar);
     Vue.component('sidebar-link', SidebarLink);

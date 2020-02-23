@@ -9,12 +9,14 @@
     "dev": "npm run serve"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.5",
     "axios": "^0.19.2",
     "bootstrap": "^4.0.0",
-    "chartist": "^0.11.0"
+    "chartist": "^0.11.0",
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11",
+    "vue-notifyjs": "^0.3.0",
+    "vue-router": "^3.1.5",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",

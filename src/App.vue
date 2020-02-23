@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <notifications></notifications>
     <router-view/>
   </div>
 </template>
@@ -35,6 +36,14 @@
     .list-leave-to {
       opacity: 0;
       transform: scale(1.2, 0.7);
+    }
+
+    .input.invalid input {
+      border: 1px solid red;
+      background-color: #ffd2b6;
+    }
+    .input.invalid label {
+      color: red;
     }
   }
 </style>
