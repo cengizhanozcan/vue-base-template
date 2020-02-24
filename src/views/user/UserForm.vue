@@ -12,10 +12,12 @@
             <fg-input type="email"
                       label="Email Address"
                       placeholder="Email"
-                      @input="$v.emailAddress.$touch()"
-                      v-model="user.emailAddress"
-                      :class="{invalid: $v.emailAddress.$error}">
+                      v-model="$v.user.emailAddress.$model"
+                      :class="{invalid: $v.user.emailAddress.$error}">
             </fg-input>
+            <p class="error" v-if="!$v.user.emailAddress.required">this field is required</p>
+            <p class="error" v-if="!$v.user.emailAddress.email">email format failure</p>
+
             <fg-input type="text"
                       label="Name"
                       placeholder="Name"
@@ -66,9 +68,11 @@ export default {
     },
   },
   validations: {
-    emailAddress: {
-      required,
-      email,
+    user: {
+      emailAddress: {
+        required,
+        email,
+      },
     },
   },
 };
